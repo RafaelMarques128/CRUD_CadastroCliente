@@ -39,19 +39,25 @@ public class App {
     }
 
     private static void cadastrar(String dados) {
+
+        String[] dadosSeparados = dados.split(",");
+
         if (dados.split(",").length < 2) {
-            JOptionPane.showMessageDialog(null, "CPF e Nome são obrigatórios.", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "CPF, Nome e Telefone são obrigatórios.", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String[] dadosSeparados = dados.split(",");
-        while(dadosSeparados.length < 7){
-            dados = dados + ",";
-            dadosSeparados = dados.split(",");
+        if (dadosSeparados.length == 3) {
+            Cliente cliente = new Cliente(dadosSeparados[0], dadosSeparados[1], dadosSeparados[2],"", "", "", "");
+        } else if (dadosSeparados.length == 4) {
+            Cliente cliente = new Cliente(dadosSeparados[0], dadosSeparados[1], dadosSeparados[2], dadosSeparados[3], "", "", "");
+        } else if (dadosSeparados.length == 5) {
+            Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3], dadosSeparados[4], "", "");
+        } else if (dadosSeparados.length == 6) {
+            Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3], dadosSeparados[4], dadosSeparados[5], "");
+        } else if (dadosSeparados.length == 7) {
+            Cliente cliente = new Cliente(dadosSeparados[0], dadosSeparados[1], dadosSeparados[2], dadosSeparados[3], dadosSeparados[4], dadosSeparados[5], dadosSeparados[6]);
         }
-
-        Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);
-
     }
 
     private static boolean isCadastro(String opcao) {
