@@ -21,14 +21,14 @@ public class App {
         while (!isOpcaoValida(opcao)) {
             if ("".equals(opcao)) {
                 sair();
+                System.exit(0);
             }
-            opcao = JOptionPane.showInputDialog(null, "Opção invalida. Digite 1 para cadastro, 2 para consulta, 3 para exclusão, 4 para alteração e 5 para sair",
-                    "Cadastro", JOptionPane.INFORMATION_MESSAGE);
         }
 
         while (isOpcaoValida(opcao)) {
             if (isOpcaoSair(opcao)) {
                 sair();
+                System.exit(0);
             } else if (isCadastro(opcao)){
                 String dados = JOptionPane.showInputDialog(null,
                         "Digite os dados do cliente separados por vígula, conforme exemplo: Nome, CPF, Telefone, Endereço, Número, Cidade e Estado",
@@ -39,11 +39,36 @@ public class App {
                         "Digite o CPF: ",
                         "Cadastro", JOptionPane.INFORMATION_MESSAGE);
                 consulta(dados);
+            } else if (isExlcluir(opcao)) {
+                String dados = JOptionPane.showInputDialog(null,
+                        "Digite o CPF para excluir: ",
+                        "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+                excluir(dados);
             }
 
             opcao = JOptionPane.showInputDialog(null, "Opção invalida. Digite 1 para cadastro, 2 para consulta, 3 para exclusão, 4 para alteração e 5 para sair",
                     "Cadastro", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+
+    private static void excluir(String dados) {
+        Cliente cliente = iClienteDAO.excluir(Long.valueOf(dados));
+
+        if (cliente != null) {
+            JOptionPane.showMessageDialog(null, "Cliente excluido com sucesso!",
+                    "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado!",
+                    "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    private static boolean isExlcluir(String opcao) {
+        if ("3".equals(opcao)){
+            return true;
+        }
+        return false;
     }
 
     private static void consulta(String dados) {

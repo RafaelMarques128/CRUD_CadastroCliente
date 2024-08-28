@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef070916-f49c-46a1-9bdc-7c9fddf1c995" name="Changes" comment="Resolvendo problema no cadastro">
+    <list default="true" id="ef070916-f49c-46a1-9bdc-7c9fddf1c995" name="Changes" comment="Adicionando lógica para metodo de consulta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/rsm/dao/ClienteMapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rsm/dao/ClienteMapDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/rsm/domain/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rsm/domain/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/rsm/dao/iClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rsm/dao/iClienteDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724851809724</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adicionando lógica para metodo de consulta">
+      <option name="closed" value="true" />
+      <created>1724858175341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724858175341</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +110,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Resolvendo problema no cadastro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolvendo problema no cadastro" />
+    <MESSAGE value="Adicionando lógica para metodo de consulta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando lógica para metodo de consulta" />
   </component>
 </project>
