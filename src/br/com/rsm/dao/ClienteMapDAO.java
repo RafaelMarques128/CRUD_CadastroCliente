@@ -21,7 +21,7 @@ public class ClienteMapDAO implements iClienteDAO{
             return false;
         }
         this.map.put(cliente.getCpf(), cliente);
-        return null;
+        return true;
     }
 
     @Override

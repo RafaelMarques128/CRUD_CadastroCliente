@@ -34,8 +34,35 @@ public class App {
                         "Digite os dados do cliente separados por vígula, conforme exemplo: Nome, CPF, Telefone, Endereço, Número, Cidade e Estado",
                         "Cadastro", JOptionPane.INFORMATION_MESSAGE);
                 cadastrar(dados);
+            } else if (isConsulta(opcao)){
+                String dados = JOptionPane.showInputDialog(null,
+                        "Digite o CPF: ",
+                        "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+                consulta(dados);
             }
+
+            opcao = JOptionPane.showInputDialog(null, "Opção invalida. Digite 1 para cadastro, 2 para consulta, 3 para exclusão, 4 para alteração e 5 para sair",
+                    "Cadastro", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+
+    private static void consulta(String dados) {
+        Cliente cliente = iClienteDAO.consultar(Long.valueOf(dados));
+
+        if (cliente != null) {
+            JOptionPane.showMessageDialog(null, "Cliente encontrado: " + cliente.toString(),
+                    "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado!",
+                    "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private static boolean isConsulta(String opcao) {
+        if ("2".equals(opcao)){
+            return true;
+        }
+        return false;
     }
 
     private static void cadastrar(String dados) {
@@ -48,6 +75,13 @@ public class App {
         }
 
         Cliente cliente = new Cliente(dadosSeparados[0], dadosSeparados[1], dadosSeparados[2], dadosSeparados[3], dadosSeparados[4], dadosSeparados[5], dadosSeparados[6]);
+
+        boolean isCadastrado = iClienteDAO.cadastrar(cliente);
+        if (isCadastrado) {
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        }else {
+            JOptionPane.showMessageDialog(null, "Cliente já cadastrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private static boolean isCadastro(String opcao) {

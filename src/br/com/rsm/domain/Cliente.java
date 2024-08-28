@@ -102,9 +102,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "br.com.rsm.domain.Cliente{" +
-                "nome='" + nome + '\'' +
-                ", cpf=" + cpf +
-                '}';
+        return "Cliente: " + nome + ", CPF: " + cpf;
     }
 }

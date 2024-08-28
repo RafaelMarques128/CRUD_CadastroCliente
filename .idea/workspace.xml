@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef070916-f49c-46a1-9bdc-7c9fddf1c995" name="Changes" comment="">
+    <list default="true" id="ef070916-f49c-46a1-9bdc-7c9fddf1c995" name="Changes" comment="Resolvendo problema no cadastro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/rsm/dao/ClienteMapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rsm/dao/ClienteMapDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/rsm/domain/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/rsm/domain/Cliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
     "vue.rearranger.settings.migration": "true"
   }
@@ -83,20 +86,22 @@
       <workItem from="1724761069662" duration="9143000" />
       <workItem from="1724775215092" duration="7494000" />
     </task>
+    <task id="LOCAL-00001" summary="Resolvendo problema no cadastro">
+      <option name="closed" value="true" />
+      <created>1724851809723</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724851809724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/App.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Resolvendo problema no cadastro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolvendo problema no cadastro" />
   </component>
 </project>
