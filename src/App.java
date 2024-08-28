@@ -42,13 +42,37 @@ public class App {
             } else if (isExlcluir(opcao)) {
                 String dados = JOptionPane.showInputDialog(null,
                         "Digite o CPF para excluir: ",
-                        "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+                        "Excluir", JOptionPane.INFORMATION_MESSAGE);
                 excluir(dados);
+            } else if (isAltera(opcao)) {
+                String dados = JOptionPane.showInputDialog(null,
+                        "Digite os dados do cliente separados por vígula, conforme exemplo: Nome, CPF, Telefone, Endereço, Número, Cidade e Estado",
+                        "Atualização", JOptionPane.INFORMATION_MESSAGE);
+                atualizar(dados);
             }
 
             opcao = JOptionPane.showInputDialog(null, "Opção invalida. Digite 1 para cadastro, 2 para consulta, 3 para exclusão, 4 para alteração e 5 para sair",
                     "Cadastro", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+
+    private static void atualizar(String dados) {
+        String[] dadosSeparados = dados.split(",");
+
+        if (dadosSeparados.length < 7 || dadosSeparados.length > 7) {
+            JOptionPane.showMessageDialog(null, "Dados incorretos, por favor, preencha os campos corretamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);
+        iClienteDAO.alterar(cliente);
+    }
+
+    private static boolean isAltera(String opcao) {
+        if ("4".equals(opcao)) {
+            return true;
+        }
+        return false;
     }
 
     private static void excluir(String dados) {

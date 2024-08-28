@@ -35,7 +35,7 @@ public class ClienteMapDAO implements iClienteDAO{
     }
 
     @Override
-    public void alterar(Cliente cliente) {
+    public Cliente alterar(Cliente cliente) {
         Cliente clienteCadastrado = this.map.get(cliente.getCpf());
 
         if (clienteCadastrado != null) {
@@ -47,6 +47,7 @@ public class ClienteMapDAO implements iClienteDAO{
             clienteCadastrado.setEstado(cliente.getEstado());
         }
 
+        return clienteCadastrado;
     }
 
     @Override
